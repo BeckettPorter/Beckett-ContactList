@@ -26,4 +26,18 @@ public class ContactList {
     {
         contacts.add(personToAdd);
     }
+
+
+    public void printContacts()
+    {
+        for (Person p : contacts)
+        {
+            System.out.println(p);
+        }
+    }
+
+    public void sort(int sortBy)
+    {
+
+    }
 }
