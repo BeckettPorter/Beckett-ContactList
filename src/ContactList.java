@@ -3,11 +3,14 @@ import java.util.Scanner;
 
 public class ContactList {
 
+    // Instance variables, the contacts arrayList and inputString which I use to store user input
     private ArrayList<Person> contacts;
     private String inputString;
 
+    // Scanner that I use to get user input
     private Scanner input = new Scanner(System.in);
 
+    // Constructor that initializes the inputString
     public ContactList()
     {
         inputString = "";
@@ -15,25 +18,16 @@ public class ContactList {
     }
 
 
-
-    public static void main(String[] args)
-    {
-        ContactList contactList = new ContactList();
-        contactList.run();
-    }
-
-
-
+    // Get contacts method that I never use rip bozo
     public ArrayList<Person> getContacts() {
         return contacts;
     }
 
 
-
-
     // Add contact method
     public void addContact()
     {
+        // Local variables used below to create the new contact that will be added
         int contactType;
         String firstName;
         String lastName;
@@ -45,6 +39,8 @@ public class ContactList {
                 "\n 1. Student" +
                 "\n 2. Worker");
         inputString = input.nextLine();
+
+        // Switch case that sets contactType based off if the user wants a student or worker (contactType used below)
         switch (inputString)
         {
             case "1":
@@ -71,6 +67,7 @@ public class ContactList {
         System.out.println("Phone Number:");
         phoneNumber = input.nextLine();
 
+        // Switch based off of contactType local variable (I set contactType in the above switch statement)
         switch (contactType)
         {
             case 1:
@@ -97,10 +94,7 @@ public class ContactList {
     }
 
 
-
-
-
-
+    // Just goes through the contacts and prints them
     public void printContacts()
     {
         for (Person p : contacts)
@@ -133,7 +127,8 @@ public class ContactList {
     }
 
 
-
+    // Sort method that takes an int and does a switch case off of it. Based off the int, it will choose the firstName,
+    // lastName, or phone #. I'd have used a string and switched based off that but the int was part of the requirements
     public void sort(int sortBy)
     {
         switch (sortBy)
@@ -161,6 +156,7 @@ public class ContactList {
         // Switches based off the input String and does the correct type of bubble sort(for firstName, lastName, etc.)
         switch (typeToSort)
         {
+            // Bubble sort algorithm that finds
             case "firstName":
                 System.out.println("Sorting first name");
 
@@ -347,4 +343,11 @@ public class ContactList {
         run();
     }
 
+
+    // Main method that makes new contactList object and calls run on it
+    public static void main(String[] args)
+    {
+        ContactList contactList = new ContactList();
+        contactList.run();
+    }
 }
