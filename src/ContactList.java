@@ -79,7 +79,6 @@ public class ContactList {
                 input.nextLine();
 
                 contacts.add(new Student(firstName, lastName, phoneNumber, grade));
-                run();
 
                 break;
 
@@ -89,7 +88,6 @@ public class ContactList {
                 input.nextLine();
 
                 contacts.add(new Worker(firstName, lastName, phoneNumber, salary));
-                run();
 
                 break;
 
@@ -110,6 +108,31 @@ public class ContactList {
             System.out.println(p);
         }
     }
+
+
+
+    // List contacts by first name
+    public void listByFirstName()
+    {
+        sort(0);
+        printContacts();
+    }
+
+    // List contacts by last name
+    public void listByLastName()
+    {
+        sort(1);
+        printContacts();
+    }
+
+    // List contacts by last name
+    public void listByPhoneNumber()
+    {
+        sort(2);
+        printContacts();
+    }
+
+
 
     public void sort(int sortBy)
     {
@@ -238,22 +261,22 @@ public class ContactList {
         switch (inputString)
         {
             case "0":
-                break;
+                return;
 
             case "1":
                 addContact();
                 break;
 
             case "2":
-
+                listByFirstName();
                 break;
 
             case "3":
-
+                listByLastName();
                 break;
 
             case "4":
-
+                listByPhoneNumber();
                 break;
 
             case "5":
@@ -282,6 +305,7 @@ public class ContactList {
             default:
                 System.out.println("invalid input :/");
         }
+        run();
     }
 
 }
