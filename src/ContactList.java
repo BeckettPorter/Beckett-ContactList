@@ -143,11 +143,11 @@ public class ContactList {
                 break;
 
             case 1:
-
+                bubbleSort("lastName");
                 break;
 
             case 2:
-
+                bubbleSort("phoneNumber");
                 break;
 
             default:
@@ -164,26 +164,54 @@ public class ContactList {
 
                 for (int i = 0; i < contacts.size() - 1; i++)
                 {
-                    for (int j = 0; j < contacts.size() - i - 2; j++)
+                    for (int j = 0; j < contacts.size() - i - 1; j++)
                     {
-                        if (contacts.get(i).getFirstName().compareTo(contacts.get(j).getFirstName()) > 0)
+                        if (contacts.get(j).getFirstName().compareTo(contacts.get(j + 1).getFirstName()) > 0)
                         {
-                            Person temp = contacts.get(i);
-                            contacts.set(i, contacts.get(j));
-                            contacts.set(j, temp);
+                            Person temp = contacts.get(j);
+                            contacts.set(j, contacts.get(j + 1));
+                            contacts.set(j + 1, temp);
                         }
                     }
                 }
-
                 break;
+
 
             case "lastName":
+                System.out.println("Sorting last name");
 
+                for (int i = 0; i < contacts.size() - 1; i++)
+                {
+                    for (int j = 0; j < contacts.size() - i - 1; j++)
+                    {
+                        if (contacts.get(j).getLastName().compareTo(contacts.get(j + 1).getLastName()) > 0)
+                        {
+                            Person temp = contacts.get(j);
+                            contacts.set(j, contacts.get(j + 1));
+                            contacts.set(j + 1, temp);
+                        }
+                    }
+                }
                 break;
+
 
             case "phoneNumber":
+                System.out.println("Sorting phone number");
 
+                for (int i = 0; i < contacts.size() - 1; i++)
+                {
+                    for (int j = 0; j < contacts.size() - i - 1; j++)
+                    {
+                        if (contacts.get(j).getPhoneNumber().compareTo(contacts.get(j + 1).getPhoneNumber()) > 0)
+                        {
+                            Person temp = contacts.get(j);
+                            contacts.set(j, contacts.get(j + 1));
+                            contacts.set(j + 1, temp);
+                        }
+                    }
+                }
                 break;
+
 
             default:
                 System.out.println("Something messed up if the code got to the default case in the bubbleSort method");
@@ -286,19 +314,19 @@ public class ContactList {
             case "6":
                 System.out.println("Enter a first name");
                 inputString = input.nextLine();
-                searchByFirstName(inputString);
+                System.out.println(searchByFirstName(inputString));
                 break;
 
             case "7":
                 System.out.println("Enter a last name");
                 inputString = input.nextLine();
-                searchByLastName(inputString);
+                System.out.println(searchByLastName(inputString));
                 break;
 
             case "8":
                 System.out.println("Enter a Phone Number");
                 inputString = input.nextLine();
-                searchByPhoneNumber(inputString);
+                System.out.println(searchByPhoneNumber(inputString));
                 break;
 
 
