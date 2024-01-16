@@ -155,8 +155,10 @@ public class ContactList {
         }
     }
 
+    // Bubble sorting method that I can call to sort based off a String "typeToSort"
     public void bubbleSort(String typeToSort)
     {
+        // Switches based off the input String and does the correct type of bubble sort(for firstName, lastName, etc.)
         switch (typeToSort)
         {
             case "firstName":
@@ -213,13 +215,15 @@ public class ContactList {
                 break;
 
 
+
             default:
-                System.out.println("Something messed up if the code got to the default case in the bubbleSort method");
+                System.out.println("Default case in bubble sort method (code shouldn't ever get here??)");
         }
     }
 
 
     // Searching Methods
+    // This method searches through contacts and checks if the input firstName String equals any firstNames in contacts
     public Person searchByFirstName(String firstName)
     {
         for (int i = 0; i < contacts.size(); i++)
@@ -232,6 +236,7 @@ public class ContactList {
         return null;
     }
 
+    // This method searches through contacts and checks if the input lastName String equals any lastNames in contacts
     public Person searchByLastName(String lastName)
     {
         for (int i = 0; i < contacts.size(); i++)
@@ -244,6 +249,7 @@ public class ContactList {
         return null;
     }
 
+    // This method searches through contacts and checks if the input phoneNumber String equals any phone #s in contacts
     public Person searchByPhoneNumber(String phoneNumber)
     {
         for (int i = 0; i < contacts.size(); i++)
@@ -271,8 +277,10 @@ public class ContactList {
 
 
 
+    // Run method which shows list of actions and then calls the correct method based off what the user chooses
     public void run()
     {
+        // Print out options menu
         System.out.println("Menu:\n" +
                 "1. Add Contact\n" +
                 "2. List All Contacts By First Name\n" +
@@ -284,8 +292,10 @@ public class ContactList {
                 "8. Search by Phone Number\n" +
                 "0. Exit");
 
+        // Gets user input for what number they choose (could be done with a nextInt but this works too ig)
         inputString = input.nextLine();
 
+        // Main switch statement that switches to the correct response to which number the user puts in
         switch (inputString)
         {
             case "0":
@@ -333,6 +343,7 @@ public class ContactList {
             default:
                 System.out.println("invalid input :/");
         }
+        // Call run again to allow the user to do something else
         run();
     }
 
