@@ -10,7 +10,7 @@ public class ContactList {
     // Scanner that I use to get user input
     private Scanner input = new Scanner(System.in);
 
-    // Constructor that initializes the inputString
+    // Constructor that initializes the inputString1
     public ContactList()
     {
         inputString = "";
