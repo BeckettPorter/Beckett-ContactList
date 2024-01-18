@@ -18,7 +18,7 @@ public class ContactList {
     }
 
 
-    // Get contacts method that I never use rip bozo
+    // Get contacts method that I never use
     public ArrayList<Person> getContacts() {
         return contacts;
     }
